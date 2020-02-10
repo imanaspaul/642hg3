@@ -47,9 +47,96 @@ export default {
         {
           name: 'description',
           content: this.$page.post.description
-        }
+        },
+        {
+          name: 'robots',
+          content: "follow,index,max-snippet:-1,max-video-preview:-1,max-image-preview:large"
+        },
+        {
+          property: "og:locale",
+          content:"en_GB"
+        },
+         {
+          name: 'og:type',
+          content:  this.$page.post.title
+        },
+         {
+          property: "og:type",
+          content:"article"
+        },
+        {
+          property: "og:description",
+          content: this.$page.post.description
+        },
+          {
+          property: "og:url",
+          content: window.location.href
+        },
+          {
+          property: "article:author",
+          content: "http://facebook.com/manascodes/"
+        },
+        {
+          property: "article:tag",
+          content: this.$page.post.tag
+        },
+        {
+          property: "og:updated_time",
+          content: this.$page.post.date
+        },
+          {
+          property: "og:image",
+          content: this.$page.post.cover_image
+        },
+        
+        {
+          property: "og:image:secure_url",
+          content: this.$page.post.cover_image
+        },
+        {
+          property: "og:image:width",
+          content: "600"
+        },
+         {
+          property: "og:image:height",
+          content: "600"
+        },
+        {
+          property: "og:image:alt",
+          content: this.$page.post.title
+        },
+         {
+          property: "og:image:type",
+          content: "image/jpg"
+        },
+        {
+          name: "twitter:card",
+          content:"summary_large_image"
+        },
+        {
+          name: "twitter:title",
+          content: this.$page.post.title
+        },
+         {
+          name: "twitter:description",
+          content: this.$page.post.description
+        },
+        {
+          name: "twitter:creator",
+          content: '@man_as_code'
+        },
+        {
+          name: "twitter:image",
+          content: this.$page.post.cover_image
+        },
+      ],
+      link: [
+      { rel: 'canonical', href: window.location.href },
       ]
     }
+  },
+  created(){
+    // console.log(window.location.href);
   }
 }
 </script>

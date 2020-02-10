@@ -2,10 +2,11 @@
 title: A post with a cover image
 date: 2019-01-07
 published: true
+tag: Mark down
 tags: ['Markdown', 'Cover Image']
-series: false
+series: ture
 cover_image: ./images/alexandr-podvalny-220262-unsplash.jpg
-canonical_url: false
+canonical_url: ture
 description: "Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions."
 ---
 
