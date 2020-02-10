@@ -1,5 +1,5 @@
 <template>
-   <header class="fixed">
+   <header class="">
   <div class="container-flex">
     <div class="nav-wrapper">
       <div class="nav-left">

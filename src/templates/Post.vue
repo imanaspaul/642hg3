@@ -1,5 +1,12 @@
 <template>
   <Layout>
+    <div class='mt-4'>
+      <div class='tableofcontent'>
+      Table of Contents
+      <ul>
+        <li v-for='link in allLinks' :key='link.id'><a :href='link.id'>{{ link.text }}</a></li>
+      </ul>
+    </div>
     <div class="post-title">
       <h1 class="post-title__text">
         {{ $page.post.title }}
@@ -26,6 +33,7 @@
     </div>
 
     <Author class="post-author" />
+    </div>
   </Layout>
 </template>
 
@@ -67,10 +75,6 @@ export default {
         {
           property: "og:description",
           content: this.$page.post.description
-        },
-          {
-          property: "og:url",
-          content: window.location.href
         },
           {
           property: "article:author",
@@ -130,13 +134,21 @@ export default {
           content: this.$page.post.cover_image
         },
       ],
-      link: [
-      { rel: 'canonical', href: window.location.href },
-      ]
     }
   },
-  created(){
-    // console.log(window.location.href);
+  data(){
+    return {
+      links: null,
+      allLinks: []
+    }
+  },
+  mounted(){
+    this.links = document.querySelectorAll("h2, h3");
+    let lists = []
+    for(let i =0; i < this.links.length; i++){
+      this.allLinks.push({"id": `#${this.links[i].id}`, "text": this.links[i].innerText })
+    }
+    console.log(this.allLinks)
   }
 }
 </script>
@@ -161,6 +173,24 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="scss">
+.mt-4{
+  postion: fixed;
+  top: 30px;
+}
+ @media (max-width: 1500px){
+    .tableofcontent {
+    display: none;
+}
+
+    }
+.tableofcontent {
+    position: fixed;
+    top: 200px;
+    right: 10px;
+}
+.content-box{
+  margin-top: 40px;
+}
 .post-title {
   padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
   text-align: center;
@@ -214,5 +244,8 @@ query Post ($id: ID!) {
 
 .post-author {
   margin-top: calc(var(--space) / 2);
+}
+h2{
+  margin-top: 20px;
 }
 </style>
