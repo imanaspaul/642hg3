@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-
+    <Navi/>
     <header class="header">
-      <div class="header__left">
+      <!-- <div class="header__left">
         <Logo v-if="showLogo" /> 
       </div>
       
       <div class="header__right">        
         <ToggleTheme />
-      </div>
+      </div> -->
+      
     </header>
 
     <main class="main">
@@ -26,6 +27,7 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import ToggleTheme from '~/components/ToggleTheme.vue'
+import Navi from '~/components/Navi.vue'
 
 export default {
   props: {
@@ -33,33 +35,34 @@ export default {
   },
   components: {
     Logo,
-    ToggleTheme
+    ToggleTheme,
+    Navi
   }
 }
 </script>
 
 <style lang="scss">
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: var(--header-height);
-  padding: 0 calc(var(--space) / 2);
-  top:0;
-  z-index: 10;
+// .header {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   min-height: var(--header-height);
+//   padding: 0 calc(var(--space) / 2);
+//   top:0;
+//   z-index: 10;
 
-  &__left,
-  &__right {
-    display: flex;
-    align-items: center;
-  }
+//   &__left,
+//   &__right {
+//     display: flex;
+//     align-items: center;
+//   }
 
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
-  }
-}
+//   @media screen and (min-width: 1300px) {
+//     //Make header sticky for large screens
+//     position: sticky;
+//     width: 100%;
+//   }
+// }
 
 .main {
   margin: 0 auto;

@@ -5,3 +5,17 @@
 @import 'code';
 @import 'content-box';
 @import 'utils';
+
+
+body::-webkit-scrollbar {
+  width: 0.3em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--link-color);
+  outline: 1px solid rgb(112, 144, 131);
+}
